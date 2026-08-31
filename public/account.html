@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TERRA ARCHIVE — Akun Saya</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/admin.css">
+<style>
+  body.account-body{ overflow-y:auto; height:auto; min-height:100vh; }
+  .account-main{ padding:100px 24px 60px; max-width:520px; margin:0 auto; }
+  .account-main h2{
+    font-family:'Rajdhani', sans-serif; font-weight:700; font-size:22px; margin-bottom:20px;
+  }
+  .account-hint{
+    font-family:'IBM Plex Mono', monospace; font-size:10.5px;
+    color:var(--text-muted); margin-bottom:24px; line-height:1.7;
+  }
+  .section-divider{
+    border-top:1px dashed var(--border); margin:28px 0 8px; padding-top:16px;
+    font-family:'IBM Plex Mono', monospace; font-size:10px; letter-spacing:1px;
+    color:var(--text-muted);
+  }
+</style>
+</head>
+<body class="admin-body account-body">
+
+<header>
+  <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-text">
+      <h1>TERRA ARCHIVE</h1>
+      <p>AKUN SAYA</p>
+    </div>
+  </div>
+  <div class="controls">
+    <a href="index.html" class="secondary-btn">← KEMBALI KE PETA</a>
+  </div>
+</header>
+
+<main class="account-main">
+  <div id="statusMsg" class="status-msg"></div>
+
+  <div class="admin-form-wrap">
+    <h2>Ubah Akun</h2>
+    <p class="account-hint">
+      Isi Bagian username/password yang ingin diubah.
+    </p>
+
+    <form id="accountForm" class="admin-form">
+
+      <div class="section-divider">UBAH USERNAME (OPSIONAL)</div>
+      <label>Username Baru</label>
+      <input type="text" id="newUsername" placeholder="Kosongkan kalau tidak ingin diubah">
+
+      <div class="section-divider">UBAH PASSWORD (OPSIONAL)</div>
+      <label>Password Baru (minimal 6 karakter)</label>
+      <input type="password" id="newPassword" placeholder="Kosongkan kalau tidak ingin diubah" minlength="6">
+
+      <label>Ulangi Password Baru</label>
+      <input type="password" id="newPasswordConfirm" minlength="6">
+
+      <div class="form-actions">
+        <button type="submit" class="rhodes-btn">SIMPAN PERUBAHAN</button>
+      </div>
+    </form>
+  </div>
+</main>
+
+<script src="js/auth.js"></script>
+<script src="js/account.js"></script>
+</body>
+</html>

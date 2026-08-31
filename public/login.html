@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TERRA ARCHIVE — Login</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/admin.css">
+<style>
+  body.login-body{
+    overflow:auto; height:100vh;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .login-box{
+    width:340px;
+    padding:32px;
+    border:1px solid var(--border);
+    background:var(--bg-panel);
+  }
+  .login-box .brand{ justify-content:center; margin-bottom:24px; }
+  .login-box h1{
+    font-family:'Rajdhani', sans-serif; font-weight:700;
+    font-size:20px; letter-spacing:2px; text-align:center; margin-bottom:24px;
+  }
+  .login-error{
+    display:none;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    color:var(--danger);
+    border:1px solid var(--danger);
+    background:rgba(161,69,61,0.1);
+    padding:10px 12px;
+    margin-bottom:16px;
+  }
+  .login-error.show{ display:block; }
+  .switch-link{
+    text-align:center; margin-top:16px;
+    font-family:'IBM Plex Mono', monospace; font-size:11px;
+    color:var(--text-muted);
+  }
+  .switch-link a{ color:var(--accent); }
+</style>
+</head>
+<body class="login-body">
+
+<div class="login-box">
+  <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-text">
+      <h1 style="margin:0;">TERRA ARCHIVE</h1>
+    </div>
+  </div>
+
+  <div class="login-error" id="loginError"></div>
+
+  <form id="loginForm" class="admin-form">
+    <label>Username</label>
+    <input type="text" id="username" required autofocus>
+
+    <label>Password</label>
+    <input type="password" id="password" required>
+
+    <div class="form-actions">
+      <button type="submit" class="rhodes-btn" style="width:100%;">MASUK</button>
+    </div>
+  </form>
+
+  <p class="switch-link">Belum punya akun? <a href="register.html">Daftar di sini</a></p>
+</div>
+
+<script src="js/login.js"></script>
+</body>
+</html>

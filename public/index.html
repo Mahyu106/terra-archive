@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TERRA ARCHIVE — Rhodes Island Lore Index</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/admin.css">
+
+<!-- Library zoom & pan untuk peta -->
+<script src="https://cdn.jsdelivr.net/npm/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+</head>
+<body>
+
+<div class="intro" id="intro">
+  <div class="brand-mark"></div>
+  <h1>MEMBUKA ARSIP TERRA</h1>
+  <div class="intro-bar"></div>
+</div>
+
+<header>
+  <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-text">
+      <h1>TERRA ARCHIVE</h1>
+      <p>RHODES ISLAND // LORE INDEX</p>
+    </div>
+  </div>
+
+  <div class="controls">
+    <div class="counter"><b id="countNum">0</b> ENTRI DITAMPILKAN</div>
+    <div class="filters">
+      <button class="filter-chip active" data-filter="All">SEMUA</button>
+      <button class="filter-chip" data-filter="Nation">NEGARA</button>
+      <button class="filter-chip" data-filter="Organization">ORGANISASI</button>
+    </div>
+    <button class="rhodes-btn" id="rhodesBtn">RHODES ISLAND</button>
+    <a href="admin.html" id="goAdminBtn" class="secondary-btn">PANEL ADMIN</a>
+    <div class="search-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input id="searchInput" type="text" placeholder="cari lore...">
+    </div>
+  </div>
+</header>
+
+<div class="map-stage" id="mapStage">
+  <div class="stage-frame">
+    <span class="corner tl"></span>
+    <span class="corner tr"></span>
+    <span class="corner bl"></span>
+    <span class="corner br"></span>
+    <span class="tick-label top-left">SEC. 04 // GRID ACTIVE</span>
+    <span class="tick-label bottom-right">SCAN RADIUS: TERRA-WIDE</span>
+  </div>
+  <div class="map-center">
+    <div class="map-frame" id="mapFrame"></div>
+  </div>
+  <div class="zoom-controls">
+    <button id="zoomIn">+</button>
+    <button id="zoomOut">−</button>
+    <button id="zoomReset">RESET</button>
+  </div>
+</div>
+
+<div class="panel" id="panel">
+  <div class="panel-scan"></div>
+  <div class="panel-head">
+    <button class="panel-close" id="panelClose">✕</button>
+    <div id="panelTagWrap"></div>
+    <h2 id="panelTitle">—</h2>
+    <div class="region" id="panelRegion">—</div>
+  </div>
+  <div class="panel-body" id="panelBody">
+    <div class="panel-empty">PILIH SATU NODE PADA PETA UNTUK MEMBUKA BERKAS LORE.</div>
+  </div>
+</div>
+
+<div class="operator-modal" id="operatorModal">
+  <div class="operator-modal-content">
+    <button class="operator-modal-close" id="operatorModalClose">✕</button>
+    <div class="operator-modal-image" id="operatorModalImageWrap"></div>
+    <h2 id="operatorModalTitle">—</h2>
+    <div class="operator-modal-conn-type" id="operatorModalConnType"></div>
+    <div id="operatorModalDesc" class="operator-modal-text"></div>
+    <div id="operatorModalConnDesc" class="operator-modal-text"></div>
+  </div>
+</div>
+
+<footer>SIGNAL: STABIL &nbsp;·&nbsp; TERRA-DB v1.0 &nbsp;·&nbsp; AKSES: PENELITI TAMU</footer>
+
+<!-- Urutan penting: data & state dulu, baru modul yang memakainya -->
+<script src="js/data.js"></script>
+<script src="js/state.js"></script>
+<script src="js/map.js"></script>
+<script src="js/mapzoom.js"></script>
+<script src="js/panel.js"></script>
+<script src="js/filters.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

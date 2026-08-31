@@ -1,0 +1,47 @@
+/* ---------- Operator cards (di panel lore) ---------- */
+.operators-section{
+  margin-top:24px;
+  padding-top:20px;
+  border-top:1px solid var(--border);
+}
+.operators-title{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:10.5px;
+  letter-spacing:2px;
+  color:var(--accent);
+  margin-bottom:14px;
+}
+.operator-card{
+  display:flex;
+  gap:12px;
+  margin-bottom:16px;
+  padding-bottom:16px;
+  border-bottom:1px dashed var(--border);
+}
+.operator-card:last-child{ border-bottom:none; margin-bottom:0; padding-bottom:0; }
+.operator-portrait{
+  width:56px; height:56px;
+  object-fit:cover;
+  border:1px solid var(--border);
+  flex-shrink:0;
+  background:var(--bg-panel-2);
+}
+.operator-name{
+  font-family:'Rajdhani', sans-serif;
+  font-weight:600;
+  font-size:15px;
+  color:var(--text);
+}
+.operator-connection-type{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:9.5px;
+  letter-spacing:1px;
+  color:var(--cold);
+  margin:2px 0 6px;
+}
+.operator-desc, .operator-connection-desc{
+  font-size:12.5px;
+  line-height:1.6;
+  color:var(--text-muted);
+  margin-bottom:4px;
+}

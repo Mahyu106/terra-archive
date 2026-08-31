@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TERRA ARCHIVE — Panel Admin</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin-body">
+
+<header>
+  <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-text">
+      <h1>TERRA ARCHIVE</h1>
+      <p>PANEL ADMIN // KELOLA LORE</p>
+    </div>
+  </div>
+  <div class="controls">
+    <a href="index.html" class="secondary-btn">← KEMBALI KE PETA</a>
+    <button class="rhodes-btn" id="addNewBtn">+ TAMBAH BARU</button>
+    <a href="operators.html" class="secondary-btn">KELOLA OPERATOR</a>
+  </div>
+</header>
+
+<main class="admin-main">
+
+  <div id="statusMsg" class="status-msg"></div>
+
+  <div class="admin-list" id="adminList">
+    <p class="hint">Memuat data...</p>
+  </div>
+
+  <div class="admin-form-wrap" id="formWrap" style="display:none;">
+    <form id="entityForm" class="admin-form">
+      <h2 id="formTitle">Tambah Entitas Baru</h2>
+
+      <label>ID (unik, huruf kecil, tanpa spasi — misal: "kazdel")</label>
+      <input type="text" id="fId" placeholder="contoh: nama-negara" required>
+
+      <label>Nama</label>
+      <input type="text" id="fName" required>
+
+      <label>Kategori</label>
+      <select id="fCategory">
+        <option value="Nation">Negara</option>
+        <option value="Organization">Organisasi</option>
+      </select>
+
+      <label>Region / Subjudul</label>
+      <input type="text" id="fRegion" placeholder="contoh: Kekaisaran Utara — Dataran Beku">
+
+      <div class="coord-row">
+        <div>
+          <label>Posisi X (%)</label>
+          <input type="number" step="0.1" id="fPosX" placeholder="0–100">
+        </div>
+        <div>
+          <label>Posisi Y (%)</label>
+          <input type="number" step="0.1" id="fPosY" placeholder="0–100">
+        </div>
+      </div>
+      <p class="hint">Kosongkan Posisi X/Y kalau entitas ini tidak muncul di peta (seperti Rhodes Island).</p>
+
+      <label>Paragraf Lore</label>
+      <div id="loreList"></div>
+      <button type="button" id="addParagraphBtn" class="secondary-btn">+ Tambah Paragraf</button>
+
+      <div class="form-actions">
+        <button type="submit" class="rhodes-btn">SIMPAN</button>
+        <button type="button" id="cancelBtn" class="secondary-btn">BATAL</button>
+        <button type="button" id="deleteBtn" class="danger-btn" style="display:none;">HAPUS ENTITAS</button>
+      </div>
+    </form>
+  </div>
+
+</main>
+
+<script src="js/auth.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

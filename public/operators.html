@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TERRA ARCHIVE — Kelola Operator</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin-body">
+
+<header>
+  <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-text">
+      <h1>TERRA ARCHIVE</h1>
+      <p>KELOLA OPERATOR</p>
+    </div>
+  </div>
+  <div class="controls">
+    <a href="admin.html" class="secondary-btn">← KELOLA LORE</a>
+    <button class="rhodes-btn" id="addNewBtn">+ TAMBAH OPERATOR</button>
+  </div>
+</header>
+
+<main class="admin-main">
+
+  <div id="statusMsg" class="status-msg"></div>
+
+  <div class="admin-list" id="operatorList">
+    <p class="hint">Memuat data...</p>
+  </div>
+
+  <div class="admin-form-wrap" id="formWrap" style="display:none;">
+    <form id="operatorForm" class="admin-form">
+      <h2 id="formTitle">Tambah Operator Baru</h2>
+
+      <label>Berasal dari Negara/Organisasi</label>
+      <select id="fEntity" required></select>
+
+      <label>Nama Operator</label>
+      <input type="text" id="fName" required>
+
+      <label>URL Gambar Thumbnail (untuk panel lore, kecil)</label>
+      <input type="text" id="fImageUrl" placeholder="https://... (kosongkan kalau belum ada)">
+
+      <label>URL Gambar Detail (untuk modal, ukuran besar)</label>
+      <input type="text" id="fDetailImageUrl" placeholder="https://... (kosongkan = pakai gambar thumbnail juga)">
+
+      <label>Deskripsi Singkat Operator</label>
+      <textarea id="fDescription" rows="3" placeholder="Siapa operator ini, perannya apa, dsb."></textarea>
+
+      <label>Jenis Keterkaitan</label>
+      <input type="text" id="fConnectionType" placeholder="contoh: Tanah Kelahiran / Tempat Tinggal / Tempat Bekerja">
+
+      <label>Deskripsi Keterkaitan</label>
+      <textarea id="fConnectionDescription" rows="3" placeholder="Jelaskan hubungan operator ini dengan tempat tersebut"></textarea>
+
+      <div class="form-actions">
+        <button type="submit" class="rhodes-btn">SIMPAN</button>
+        <button type="button" id="cancelBtn" class="secondary-btn">BATAL</button>
+        <button type="button" id="deleteBtn" class="danger-btn" style="display:none;">HAPUS OPERATOR</button>
+      </div>
+    </form>
+  </div>
+
+</main>
+
+<script src="js/auth.js"></script>
+<script src="js/operators.js"></script>
+</body>
+</html>

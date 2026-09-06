@@ -7,17 +7,19 @@ const app = express();
 app.use(express.json());
 
 app.use(session({
-  secret: 'ganti-teks-ini-dengan-teks-rahasia-milikmu-sendiri',
+  secret: process.env.SESSION_SECRET || 'ganti-teks-ini-dengan-teks-rahasia-milikmu-sendiri',
   resave: false,
   saveUninitialized: false,
   cookie: { maxAge: 1000 * 60 * 60 * 8 } // sesi bertahan 8 jam
 }));
 
 const pool = mysql.createPool({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'terra_archive'
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT || 3306,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  ssl: { rejectUnauthorized: true }
 });
 
 // ============================================================
